@@ -25,6 +25,8 @@ function getUiConfig() {
       // Called when the user has been successfully signed in.
       'signInSuccessWithAuthResult': function(authResult, redirectUrl) {
         if (authResult.user) {
+          console.log("JWT token:");
+          console.log(authResult.credential.idToken);
           handleSignedInUser(authResult.user);
         }
         if (authResult.additionalUserInfo) {
